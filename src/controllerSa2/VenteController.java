@@ -67,6 +67,14 @@ public class VenteController {
 		pst.setString(5,dateVente);
 		rs = pst.execute(); // execution de la syntaxe SQL
 		if (rs == false) {
+			String sql1 = "UPDATE stock SET stock.stock:=stock.stock-1 WHERE stock.marque = ? AND stock.modele = ?;";
+			Connection con1 = null;
+			con1 =  bdconnect.getConnection(); // connection a la
+			// BDD
+			PreparedStatement pst1 = con.prepareStatement(sql1); // preparation de la syntaxe SQL
+			pst1.setString(1,marque);
+			pst1.setString(2,modele);
+			rs = pst1.execute();
 			JOptionPane.showMessageDialog(null, "le vente a bien ete enregistrer");
 			VenteController.toutAfficher(table);
 		} else {
