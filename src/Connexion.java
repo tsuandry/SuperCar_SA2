@@ -52,6 +52,7 @@ public class Connexion {
 		frame.setBounds(100, 100, 377, 260);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		frame.setTitle("Connexion");
 
 		JLabel lblEmail = new JLabel("E-mail :");
 		lblEmail.setBounds(71, 45, 48, 14);
